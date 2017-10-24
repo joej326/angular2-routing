@@ -6,9 +6,17 @@
         when it's a relative path it gets put at the end of the already exisiting path (servers/servers) -->
 
         <!-- note: you can also use './servers' or '../servers' or whatver you'd like  -->
-        <li role="presentation" class="active"><a routerLink="/">Home</a></li>
-        <li role="presentation"><a routerLink="/servers">Servers</a></li>
-        <li role="presentation"><a routerLink="/users">Users</a></li>
+
+                          <!-- routerLinkActive replaces bootsrap's "active" class functionality -->
+
+                          <!-- routerLinkActiveOptions needs square brackets b/c we are passing in a javascript object.
+                          the 'exact' property is reserved. -->
+        <li
+        role="presentation"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/servers">Servers</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/users">Users</a></li>
       </ul>
     </div>
   </div>
