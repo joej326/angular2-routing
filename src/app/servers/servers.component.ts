@@ -14,6 +14,8 @@ export class ServersComponent implements OnInit {
   constructor(private serversService: ServersService,
               private router: Router,
               private route: ActivatedRoute) { }
+              //ActivatedRoute gives us access to the currently loaded route
+              // which is why we can get the result '/servers/servers' (see comment below)
 
   ngOnInit() {
     this.servers = this.serversService.getServers();
